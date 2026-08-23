@@ -1,20 +1,5 @@
 import type { Metadata } from "next";
-import { Albert_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
-const albertSans = Albert_Sans({
-  subsets: ["latin"],
-  variable: "--font-albert",
-  weight: ["300", "400", "500", "600"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-fragment",
-  weight: ["400", "500"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Muzammil Ullah Khan — Building Beyond Possible",
@@ -34,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${albertSans.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en">
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

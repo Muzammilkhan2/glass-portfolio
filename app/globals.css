@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +9,8 @@
   --reveal-y: -999px;
   --reveal-radius: 0px;
   --bg: #f0f7fb;
+  --font-albert: "Albert Sans", system-ui, sans-serif;
+  --font-fragment: "JetBrains Mono", ui-monospace, monospace;
 }
 
 * {
@@ -17,12 +21,15 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 html,
 body {
-  min-height: 100%;
+  height: auto;
   overflow-x: hidden;
+  overflow-y: auto;
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,6 +48,13 @@ button:focus-visible {
 }
 
 /* Reduced motion */
+@layer utilities {
+  .mobile-nav-backdrop {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -49,6 +63,53 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.hero-bg-base {
+  background-image: url("/images/Base_image_desktop.png");
+}
+
+.hero-bg-reveal {
+  background-image: url("/images/Reveal_image_desktop.png");
+  -webkit-mask-image: radial-gradient(circle var(--reveal-radius) at var(--reveal-x) var(--reveal-y), black 0%, black 70%, transparent 100%);
+  mask-image: radial-gradient(circle var(--reveal-radius) at var(--reveal-x) var(--reveal-y), black 0%, black 70%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.hero-circle-size {
+  width: min(72vw, 640px);
+  height: min(72vw, 640px);
+  top: 50%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-header {
+  padding-top: max(2.5rem, env(safe-area-inset-top));
+  padding-left: max(5.6vw, 2rem);
+  padding-right: max(5.6vw, 2rem);
+}
+
+.hero-headline {
+  top: 34%;
+  left: max(5.6vw, 2rem);
+  max-width: min(90vw, 620px);
+}
+
+.hero-headline-text {
+  font-size: clamp(3.2rem, 6.2vw, 6.8rem);
+}
+
+.hero-intro {
+  bottom: max(2.8rem, env(safe-area-inset-bottom));
+  left: max(5.6vw, 2rem);
+  max-width: min(90vw, 380px);
+}
+
+.hero-manifesto {
+  bottom: max(3.5rem, env(safe-area-inset-bottom));
+  right: max(5.6vw, 2rem);
 }
 
 /* Technical grid overlay */

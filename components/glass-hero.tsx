@@ -137,54 +137,23 @@ export default function GlassHero() {
       aria-label="Hero portrait with liquid glass reveal"
     >
       {/* ========== LAYER 1: Base portrait ========== */}
-      <div
-        className="absolute inset-0 bg-center bg-no-repeat bg-cover animate-base-in"
-        style={{
-          backgroundImage: "url(/images/Base_image_desktop.png)",
-        }}
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 bg-center bg-no-repeat bg-cover animate-base-in hero-bg-base" aria-hidden="true" />
 
       {/* ========== LAYER 2: Reveal portrait (masked) ========== */}
       <div
         ref={revealRef}
-        className="absolute inset-0 bg-center bg-no-repeat bg-cover pointer-events-none"
-        style={{
-          backgroundImage: "url(/images/Reveal_image_desktop.png)",
-          maskImage:
-            "radial-gradient(circle var(--reveal-radius) at var(--reveal-x) var(--reveal-y), black 0%, black 70%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(circle var(--reveal-radius) at var(--reveal-x) var(--reveal-y), black 0%, black 70%, transparent 100%)",
-          maskRepeat: "no-repeat",
-          WebkitMaskRepeat: "no-repeat",
-        }}
+        className="absolute inset-0 bg-center bg-no-repeat bg-cover pointer-events-none hero-bg-reveal"
         aria-hidden="true"
       />
 
       {/* ========== LAYER 3: Technical grid + large circle ========== */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="tech-grid absolute inset-0 opacity-60" />
-        <div
-          className="tech-circle absolute"
-          style={{
-            width: "min(72vw, 640px)",
-            height: "min(72vw, 640px)",
-            top: "50%",
-            left: "58%",
-            transform: "translate(-50%, -50%)",
-          }}
-        />
+        <div className="tech-circle absolute hero-circle-size" />
       </div>
 
       {/* ========== LAYER 4: Navigation ========== */}
-      <header
-        className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between animate-nav-in"
-        style={{
-          paddingTop: "max(2.5rem, env(safe-area-inset-top))",
-          paddingLeft: "max(5.6vw, 2rem)",
-          paddingRight: "max(5.6vw, 2rem)",
-        }}
-      >
+      <header className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between animate-nav-in hero-header">
         <div className="flex items-center gap-3">
           {/* Angular M mark */}
           <svg
@@ -260,7 +229,7 @@ export default function GlassHero() {
         <a
           href="https://www.linkedin.com/in/muzammil-khan-041193271"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="inline-flex items-center justify-center rounded-full bg-white text-slate-900 text-[13px] font-medium px-5 py-2.5 shadow-sm hover:shadow-md transition-shadow min-h-[44px] border border-slate-200/80"
         >
           Let&apos;s talk
@@ -270,7 +239,7 @@ export default function GlassHero() {
       {menuOpen ? (
         <div
           id="mobile-nav"
-          className="absolute inset-x-0 top-full z-20 rounded-[2rem] border border-slate-200/80 bg-white/95 p-4 shadow-2xl shadow-slate-900/10 backdrop-blur-xl md:hidden animate-fade-up"
+          className="absolute inset-x-0 top-full z-20 rounded-[2rem] border border-slate-200/80 bg-white/95 p-4 shadow-2xl shadow-slate-900/10 mobile-nav-backdrop md:hidden animate-fade-up"
         >
           <nav className="space-y-3" aria-label="Mobile primary">
             {[
@@ -293,36 +262,16 @@ export default function GlassHero() {
       ) : null}
 
       {/* ========== LAYER 5: Headline + copy ========== */}
-      <div
-        className="absolute z-20"
-        style={{
-          top: "34%",
-          left: "max(5.6vw, 2rem)",
-          maxWidth: "min(90vw, 620px)",
-        }}
-      >
+      <div className="absolute z-20 hero-headline">
         <h1 className="font-sans font-medium text-slate-900 leading-[0.93] tracking-[-0.085em] animate-heading">
-          <span className="block" style={{ fontSize: "clamp(3.2rem, 6.2vw, 6.8rem)" }}>
-            Building
-          </span>
-          <span className="block" style={{ fontSize: "clamp(3.2rem, 6.2vw, 6.8rem)" }}>
-            Beyond
-          </span>
-          <span className="block" style={{ fontSize: "clamp(3.2rem, 6.2vw, 6.8rem)" }}>
-            Possible.
-          </span>
+          <span className="block hero-headline-text">Building</span>
+          <span className="block hero-headline-text">Beyond</span>
+          <span className="block hero-headline-text">Possible.</span>
         </h1>
       </div>
 
       {/* Bottom-left intro + button */}
-      <div
-        className="absolute z-20 animate-intro"
-        style={{
-          bottom: "max(2.8rem, env(safe-area-inset-bottom))",
-          left: "max(5.6vw, 2rem)",
-          maxWidth: "min(90vw, 380px)",
-        }}
-      >
+      <div className="absolute z-20 animate-intro hero-intro">
         <p className="text-[15px] leading-relaxed text-slate-700 mb-5">
           I build useful products, experiment with emerging technology, and turn
           the process into stories worth sharing.
@@ -336,13 +285,7 @@ export default function GlassHero() {
       </div>
 
       {/* Right-side manifesto */}
-      <div
-        className="absolute z-20 hidden sm:block animate-manifesto"
-        style={{
-          bottom: "max(3.5rem, env(safe-area-inset-bottom))",
-          right: "max(5.6vw, 2rem)",
-        }}
-      >
+      <div className="absolute z-20 hidden sm:block animate-manifesto hero-manifesto">
         <p className="font-mono text-[11px] leading-[1.7] tracking-[0.12em] text-slate-500 uppercase text-right">
           BUILDING THE
           <br />
