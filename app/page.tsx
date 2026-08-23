@@ -1,5 +1,6 @@
 import GlassHero from "@/components/glass-hero";
 import Projects from "@/components/projects";
+import Analytics from "@/components/analytics";
 
 export default function Home() {
   return (
@@ -70,6 +71,13 @@ export default function Home() {
           className="mx-auto max-w-6xl border-t border-slate-200/80 px-6 py-20 sm:px-8 lg:px-12"
         >
           <Projects />
+        </section>
+
+        <section
+          id="analytics"
+          className="mx-auto max-w-6xl border-t border-slate-200/80 px-6 py-20 sm:px-8 lg:px-12"
+        >
+          <Analytics />
         </section>
 
         <section
