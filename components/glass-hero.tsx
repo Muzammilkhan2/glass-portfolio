@@ -229,6 +229,12 @@ export default function GlassHero() {
           >
             Experiments
           </a>
+          <a
+            href="#contact"
+            className="text-[13px] font-medium text-slate-700 hover:text-slate-900 transition-colors min-h-[44px] flex items-center"
+          >
+            Contact
+          </a>
         </nav>
 
         {/* CTA */}
@@ -254,6 +260,7 @@ export default function GlassHero() {
                 { label: "Analytics", href: "#analytics" },
                 { label: "Process", href: "#process" },
                 { label: "Experiments", href: "#experiments" },
+                { label: "Contact", href: "#contact" },
               ].map((item) => (
               <a
                 key={item.href}

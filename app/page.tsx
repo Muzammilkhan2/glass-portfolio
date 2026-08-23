@@ -1,6 +1,8 @@
 import GlassHero from "@/components/glass-hero";
+import About from "@/components/about";
 import Projects from "@/components/projects";
 import Analytics from "@/components/analytics";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
@@ -12,58 +14,7 @@ export default function Home() {
           id="about"
           className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:px-12"
         >
-          <div className="mx-auto max-w-3xl">
-            <p className="text-sm uppercase tracking-[0.32em] text-sky-700">
-              About
-            </p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
-              I build tools, products, and experiences that move ideas forward.
-            </h2>
-            <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
-              I’m Muzammil Ullah Khan, a Computer Science student and developer
-              building modern portfolio websites, web applications, and AI
-              experiments. I bring clarity to product design, speed to
-              implementation, and intent to every project I ship.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                label: "Role",
-                title: "Frontend & product builder",
-                description:
-                  "I create performant websites, accessible UIs, and polished landing pages with attention to every detail.",
-              },
-              {
-                label: "Focus",
-                title: "Web apps, portfolios, AI tools",
-                description:
-                  "I combine modern web stack tools, smart interactions, and clean design to launch projects that feel stronger over time.",
-              },
-              {
-                label: "Values",
-                title: "Open source and continuous learning",
-                description:
-                  "I share progress through repos and experiments, and I learn by shipping early iterations in public.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="group rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:border-sky-200/80 hover:shadow-lg"
-              >
-                <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
-                  {item.label}
-                </p>
-                <p className="mt-4 text-xl font-semibold text-slate-900">
-                  {item.title}
-                </p>
-                <p className="mt-3 text-sm leading-7 text-slate-600 group-hover:text-slate-700">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <About />
         </section>
 
         <section
@@ -75,7 +26,7 @@ export default function Home() {
 
         <section
           id="analytics"
-          className="mx-auto max-w-6xl border-t border-slate-200/80 px-6 py-20 sm:px-8 lg:px-12"
+          className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:px-12"
         >
           <Analytics />
         </section>
@@ -113,7 +64,7 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:border-sky-200/80 hover:shadow-lg"
+                className="group rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:border-sky-200/80 hover:shadow-lg"
               >
                 <h3 className="text-2xl font-semibold text-slate-900">
                   {item.title}
@@ -175,43 +126,9 @@ export default function Home() {
 
         <section
           id="contact"
-          className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:px-12"
+          className="mx-auto max-w-6xl border-t border-slate-200/80 px-6 py-20 sm:px-8 lg:px-12"
         >
-          <div className="rounded-[2rem] border border-slate-200/80 bg-slate-900 p-10 text-white shadow-lg shadow-slate-900/20 sm:p-14">
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div>
-                <p className="text-sm uppercase tracking-[0.32em] text-sky-300">
-                  Let’s connect
-                </p>
-                <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
-                  Ready to build the next version of your web presence?
-                </h2>
-                <p className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-                  Find me on GitHub to explore the full repository collection,
-                  or reach out on LinkedIn to start a conversation.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <a
-                  href="https://github.com/Muzammilkhan2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block rounded-3xl bg-white px-6 py-4 text-center text-sm font-semibold uppercase tracking-[0.25em] text-slate-900 transition hover:bg-slate-100"
-                >
-                  View GitHub repos
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/muzammil-khan-041193271"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block rounded-3xl border border-slate-200 bg-transparent px-6 py-4 text-center text-sm font-semibold uppercase tracking-[0.25em] text-white transition hover:border-slate-100 hover:bg-white/5"
-                >
-                  Visit LinkedIn profile
-                </a>
-              </div>
-            </div>
-          </div>
+          <Contact />
         </section>
       </div>
     </main>
