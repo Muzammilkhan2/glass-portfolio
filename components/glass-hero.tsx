@@ -205,29 +205,17 @@ export default function GlassHero() {
           >
             About
           </a>
-            <a
-              href="#work"
-              className="text-[13px] font-medium text-slate-700 hover:text-slate-900 transition-colors min-h-[44px] flex items-center"
-            >
-              Work
-            </a>
-            <a
-              href="#analytics"
-              className="text-[13px] font-medium text-slate-700 hover:text-slate-900 transition-colors min-h-[44px] flex items-center"
-            >
-              Analytics
-            </a>
-            <a
-              href="#process"
+          <a
+            href="#experience"
             className="text-[13px] font-medium text-slate-700 hover:text-slate-900 transition-colors min-h-[44px] flex items-center"
           >
-            Process
+            Experience
           </a>
           <a
-            href="#experiments"
+            href="#work"
             className="text-[13px] font-medium text-slate-700 hover:text-slate-900 transition-colors min-h-[44px] flex items-center"
           >
-            Experiments
+            Work
           </a>
           <a
             href="#contact"
@@ -254,14 +242,12 @@ export default function GlassHero() {
           className="absolute inset-x-0 top-full z-20 rounded-[2rem] border border-slate-200/80 bg-white/95 p-4 shadow-2xl shadow-slate-900/10 mobile-nav-backdrop md:hidden animate-fade-up"
         >
           <nav className="space-y-3" aria-label="Mobile primary">
-              {[
-                { label: "About", href: "#about" },
-                { label: "Work", href: "#work" },
-                { label: "Analytics", href: "#analytics" },
-                { label: "Process", href: "#process" },
-                { label: "Experiments", href: "#experiments" },
-                { label: "Contact", href: "#contact" },
-              ].map((item) => (
+            {[
+              { label: "About", href: "#about" },
+              { label: "Experience", href: "#experience" },
+              { label: "Work", href: "#work" },
+              { label: "Contact", href: "#contact" },
+            ].map((item) => (
               <a
                 key={item.href}
                 href={item.href}

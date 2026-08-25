@@ -57,43 +57,46 @@ const contactLinks = [
 
 export default function Contact() {
   return (
-    <>
-      <div className="mx-auto max-w-3xl">
-        <p className="text-sm uppercase tracking-[0.32em] text-sky-700">
+    <section
+      id="contact"
+      className="relative z-10 border-t border-slate-200/60 bg-[#f0f7fb] px-6 py-24 md:px-12 lg:px-20"
+    >
+      <div className="mx-auto max-w-5xl">
+        <p className="mb-3 font-mono text-[11px] tracking-[0.15em] text-slate-500 uppercase">
           Contact
         </p>
-        <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
+        <h2 className="mb-6 text-3xl font-medium tracking-tight text-slate-900 md:text-4xl">
           Let&apos;s talk
         </h2>
-        <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg">
+        <p className="mb-12 max-w-2xl text-[15px] leading-relaxed text-slate-600">
           Open to internships, junior roles, collaborations, or just a
           conversation about building useful solutions.
         </p>
-      </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {contactLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            target={link.external ? "_blank" : undefined}
-            rel={link.external ? "noopener noreferrer" : undefined}
-            className="group inline-flex items-center gap-3 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:border-sky-200/80 hover:shadow-lg"
-          >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700">
-              {link.icon}
-            </span>
-            <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
-                {link.label}
-              </p>
-              <p className="mt-1 text-sm font-medium text-slate-900">
-                {link.value}
-              </p>
-            </div>
-          </a>
-        ))}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {contactLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              className="group inline-flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200/80 hover:shadow-md"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                {link.icon}
+              </span>
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
+                  {link.label}
+                </p>
+                <p className="mt-1 text-sm font-medium text-slate-900">
+                  {link.value}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
-    </>
+    </section>
   );
 }
