@@ -31,6 +31,13 @@ const projects: Project[] = [
     live: "https://glass-portfolio-phi.vercel.app",
     github: "https://github.com/Muzammilkhan2/glass-portfolio",
   },
+  {
+    title: "Stock Market Simulator",
+    description: "Full-featured stock market simulator with algorithmic fluctuations",
+    tech: ["TypeScript", "Node.js"],
+    github: "https://github.com/Muzammilkhan2/your-repo",
+    live: "",
+  },
 ];
 
 export default function Projects() {
